@@ -10,7 +10,7 @@
 
 *Challenge your mind with scientifically designed games that boost memory, reflexes, and logical thinking*
 
-[🎮 Play Now](https://saga-rise-brain-game.vercel.app) • [📖 Documentation](#documentation) • [🤝 Contributing](#contributing)
+[🎮 Play Now](https://sagarise.vercel.app) • [📖 Documentation](#documentation) • [🤝 Contributing](#contributing)
 
 </div>
 
