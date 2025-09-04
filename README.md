@@ -106,7 +106,7 @@ SagaRise is a modern, responsive brain training web application designed to enha
 ## 🚀 Getting Started
 
 ### 🎮 **Play Online**
-Simply visit the live demo: **[SagaRise Live](https://YOUR_USERNAME.github.io/sagarise-brain-training)**
+Simply visit the live demo: **[SagaRise Live](https://sagarise.vercel.app)**
 
 ### 🏠 **Run Locally**
 1. Clone the repository
