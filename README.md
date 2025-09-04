@@ -1,4 +1,4 @@
-# SagaRise-Brain-Game
+# SagaRise
 <div align="center">
   
 # 🧠 SagaRise
