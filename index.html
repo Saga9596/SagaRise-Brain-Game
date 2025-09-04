@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SagaRise - Brain Training</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <div class="screen active" id="welcomeScreen">
+        <div class="welcome-content">
+            <div class="main-header">
+                <h1 class="game-title">SagaRise</h1>
+                <p class="subtitle">Elevate Your Mind</p>
+            </div>
+            
+            <div class="welcome-actions">
+                <button class="btn btn--primary btn--lg" id="signupBtn" type="button">
+                    Create Account
+                </button>
+                <button class="btn btn--outline btn--lg" id="guestBtn" type="button">
+                    Guest Mode
+                </button>
+                <button class="btn btn--secondary btn--lg" id="loginBtn" type="button">
+                    Login
+                </button>
+            </div>
+            
+            <div class="welcome-features">
+                <div class="feature">
+                    <span class="feature-icon">🧠</span>
+                    <span>Train Your Memory</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">⚡</span>
+                    <span>Improve Reflexes</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🧩</span>
+                    <span>Enhance Logic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Screen -->
+    <div class="screen" id="signupScreen">
+        <div class="auth-content">
+            <div class="auth-header">
+                <button class="back-btn" id="signupBackBtn" type="button">← Back</button>
+                <h2>Create Your Account</h2>
+            </div>
+            
+            <form class="auth-form" id="signupForm">
+                <div class="form-group">
+                    <label class="form-label" for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" class="form-control" placeholder="Enter your email" required>
+                    <div class="error-message" id="emailError"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="signupUsername">Username</label>
+                    <input type="text" id="signupUsername" class="form-control" placeholder="Choose a username" maxlength="20" required>
+                    <div class="error-message" id="usernameError"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" class="form-control" placeholder="Create a password" minlength="6" required>
+                    <div class="error-message" id="passwordError"></div>
+                </div>
+                
+                <button class="btn btn--primary btn--full-width" type="submit">
+                    Create Account
+                </button>
+            </form>
+            
+            <div class="auth-switch">
+                <p>Already have an account? <a href="#" id="switchToLogin">Login here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Screen -->
+    <div class="screen" id="loginScreen">
+        <div class="auth-content">
+            <div class="auth-header">
+                <button class="back-btn" id="loginBackBtn" type="button">← Back</button>
+                <h2>Welcome Back</h2>
+            </div>
+            
+            <form class="auth-form" id="loginForm">
+                <div class="form-group">
+                    <label class="form-label" for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" class="form-control" placeholder="Enter your email" required>
+                    <div class="error-message" id="loginEmailError"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" class="form-control" placeholder="Enter your password" required>
+                    <div class="error-message" id="loginPasswordError"></div>
+                </div>
+                
+                <button class="btn btn--primary btn--full-width" type="submit">
+                    Login
+                </button>
+            </form>
+            
+            <div class="auth-switch">
+                <p>Don't have an account? <a href="#" id="switchToSignup">Create one here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Guest Account Screen -->
+    <div class="screen" id="guestScreen">
+        <div class="auth-content">
+            <div class="auth-header">
+                <button class="back-btn" id="guestBackBtn" type="button">← Back</button>
+                <h2>Guest Mode</h2>
+            </div>
+            
+            <form class="auth-form" id="guestForm">
+                <div class="form-group">
+                    <label class="form-label" for="guestUsername">Username</label>
+                    <input type="text" id="guestUsername" class="form-control" placeholder="Enter your username" maxlength="20" required>
+                    <div class="error-message" id="guestUsernameError"></div>
+                </div>
+                
+                <button class="btn btn--primary btn--full-width" type="submit">
+                    Start Playing
+                </button>
+            </form>
+            
+            <div class="guest-info">
+                <p><small>Note: Guest progress will be saved locally but not backed up.</small></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Avatar Selection Screen -->
+    <div class="screen" id="avatarScreen">
+        <div class="avatar-content">
+            <div class="avatar-header">
+                <h2>Choose Your Avatar</h2>
+                <p>Pick an avatar that represents you</p>
+            </div>
+            
+            <div class="avatar-selection" id="avatarSelection">
+                <div class="avatar-option active" data-avatar="🧠">🧠</div>
+                <div class="avatar-option" data-avatar="🎯">🎯</div>
+                <div class="avatar-option" data-avatar="⚡">⚡</div>
+                <div class="avatar-option" data-avatar="🚀">🚀</div>
+                <div class="avatar-option" data-avatar="💎">💎</div>
+                <div class="avatar-option" data-avatar="👑">👑</div>
+                <div class="avatar-option" data-avatar="🦾">🦾</div>
+                <div class="avatar-option" data-avatar="🤖">🤖</div>
+                <div class="avatar-option" data-avatar="🌟">🌟</div>
+                <div class="avatar-option" data-avatar="🔥">🔥</div>
+                <div class="avatar-option" data-avatar="🎮">🎮</div>
+                <div class="avatar-option" data-avatar="🏆">🏆</div>
+                <div class="avatar-option" data-avatar="💪">💪</div>
+                <div class="avatar-option" data-avatar="🔮">🔮</div>
+                <div class="avatar-option" data-avatar="⭐">⭐</div>
+            </div>
+            
+            <button class="btn btn--primary btn--lg" id="selectAvatarBtn" type="button">
+                Continue
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Menu Screen -->
+    <div class="screen" id="mainMenu">
+        <div class="app-header">
+            <div class="user-profile" id="userProfile">
+                <div class="user-avatar" id="userAvatar">🧠</div>
+                <div class="user-info">
+                    <div class="username" id="username">Player</div>
+                    <div class="user-level" id="userLevel">Level 1 • 0 XP</div>
+                    <div class="total-score" id="totalScoreHeader">Score: 0</div>
+                </div>
+            </div>
+            <button class="logout-btn" id="logoutBtn" type="button">Logout</button>
+        </div>
+        
+        <div class="main-header">
+            <h1 class="game-title">SagaRise</h1>
+            <p class="subtitle">Elevate Your Mind</p>
+        </div>
+        
+        <div class="brain-efficiency">
+            <div class="efficiency-circle">
+                <div class="efficiency-fill" id="efficiencyFill"></div>
+                <div class="efficiency-text">
+                    <span class="efficiency-score" id="efficiencyScore">0</span>
+                    <span class="efficiency-label">BRAIN EFFICIENCY</span>
+                </div>
+            </div>
+            <div class="lives-display">
+                <span class="lives-label">Lives:</span>
+                <span class="lives-count" id="livesCount">3</span>
+            </div>
+        </div>
+        
+        <div class="navigation-tabs">
+            <button class="nav-tab active" data-section="games">Games</button>
+            <button class="nav-tab" data-section="leaderboard">Leaderboard</button>
+            <button class="nav-tab" data-section="stats">Stats</button>
+        </div>
+        
+        <div class="main-content">
+            <!-- Games Section -->
+            <div class="content-section active" id="gamesSection">
+                <div class="game-modes">
+                    <button class="mode-btn" data-mode="memory" type="button">
+                        <div class="mode-icon">🧠</div>
+                        <div class="mode-info">
+                            <h3>Memory Grid</h3>
+                            <p>Remember and repeat sequences to boost recall</p>
+                            <span class="best-score" id="memoryBest">Best: 0</span>
+                        </div>
+                    </button>
+                    
+                    <button class="mode-btn" data-mode="reflex" type="button">
+                        <div class="mode-icon">⚡</div>
+                        <div class="mode-info">
+                            <h3>Color Reflex</h3>
+                            <p>Match colors quickly to improve reaction time</p>
+                            <span class="best-score" id="reflexBest">Best: 0</span>
+                        </div>
+                    </button>
+                    
+                    <button class="mode-btn" data-mode="logic" type="button">
+                        <div class="mode-icon">🧩</div>
+                        <div class="mode-info">
+                            <h3>Number Logic</h3>
+                            <p>Find missing numbers to sharpen reasoning</p>
+                            <span class="best-score" id="logicBest">Best: 0</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Leaderboard Section -->
+            <div class="content-section" id="leaderboardSection">
+                <h3>Global Leaderboard</h3>
+                <div class="leaderboard-list" id="leaderboardList">
+                    <!-- Leaderboard entries will be populated by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Stats Section -->
+            <div class="content-section" id="statsSection">
+                <h3>Your Progress</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="totalScore">0</div>
+                        <div class="stat-label">Total Score</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="totalXP">0</div>
+                        <div class="stat-label">Total XP</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="gamesPlayed">0</div>
+                        <div class="stat-label">Games Played</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="achievementsCount">0</div>
+                        <div class="stat-label">Achievements</div>
+                    </div>
+                </div>
+                
+                <div class="achievements-section">
+                    <h4>Achievements</h4>
+                    <div class="achievements-list" id="achievementsList">
+                        <!-- Achievements will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Memory Game Screen -->
+    <div class="screen" id="memoryGame">
+        <div class="game-header">
+            <button class="back-btn" id="memoryBack" type="button">← Back</button>
+            <div class="game-stats">
+                <span>Level: <span id="memoryLevel">1</span></span>
+                <span>Score: <span id="memoryScore">0</span></span>
+                <span>Lives: <span id="memoryLives">3</span></span>
+            </div>
+        </div>
+        
+        <div class="game-status" id="memoryStatus">Watch the sequence...</div>
+        
+        <div class="memory-grid" id="memoryGrid">
+            <!-- Grid cells will be generated by JavaScript -->
+        </div>
+        
+        <div class="game-controls">
+            <button class="game-btn" id="memoryRestart" type="button">Restart</button>
+            <button class="sound-toggle" id="memorySoundToggle" type="button">🔊</button>
+        </div>
+    </div>
+    
+    <!-- Reflex Game Screen -->
+    <div class="screen" id="reflexGame">
+        <div class="game-header">
+            <button class="back-btn" id="reflexBack" type="button">← Back</button>
+            <div class="game-stats">
+                <span>Score: <span id="reflexScore">0</span></span>
+                <span>Time: <span id="reflexTime">30</span>s</span>
+                <span>Lives: <span id="reflexLives">3</span></span>
+            </div>
+        </div>
+        
+        <div class="game-status" id="reflexStatus">Click the matching color!</div>
+        
+        <div class="reflex-arena" id="reflexArena">
+            <!-- Targets will appear here -->
+        </div>
+        
+        <div class="color-buttons">
+            <button class="color-btn" data-color="#ff6b6b" style="background: #ff6b6b;"></button>
+            <button class="color-btn" data-color="#4ecdc4" style="background: #4ecdc4;"></button>
+            <button class="color-btn" data-color="#45b7d1" style="background: #45b7d1;"></button>
+            <button class="color-btn" data-color="#96ceb4" style="background: #96ceb4;"></button>
+        </div>
+        
+        <div class="game-controls">
+            <button class="game-btn" id="reflexRestart" type="button">Restart</button>
+            <button class="sound-toggle" id="reflexSoundToggle" type="button">🔊</button>
+        </div>
+    </div>
+    
+    <!-- Logic Game Screen -->
+    <div class="screen" id="logicGame">
+        <div class="game-header">
+            <button class="back-btn" id="logicBack" type="button">← Back</button>
+            <div class="game-stats">
+                <span>Level: <span id="logicLevel">1</span></span>
+                <span>Score: <span id="logicScore">0</span></span>
+                <span>Lives: <span id="logicLives">3</span></span>
+            </div>
+        </div>
+        
+        <div class="game-status">Find the missing number:</div>
+        
+        <div class="logic-puzzle">
+            <div class="sequence-display" id="sequenceDisplay">
+                <!-- Sequence will be generated by JavaScript -->
+            </div>
+            
+            <div class="answer-section">
+                <input type="number" id="answerInput" placeholder="?">
+                <button class="submit-btn" id="submitAnswer" type="button">Submit</button>
+            </div>
+        </div>
+        
+        <div class="game-controls">
+            <button class="game-btn" id="logicRestart" type="button">Restart</button>
+            <button class="sound-toggle" id="logicSoundToggle" type="button">🔊</button>
+        </div>
+    </div>
+    
+    <!-- Game Over Screen -->
+    <div class="screen" id="gameOver">
+        <div class="game-over-content">
+            <h2 id="gameOverTitle">Game Complete!</h2>
+            <div class="final-score" id="finalScore">0</div>
+            <div class="score-message" id="scoreMessage">Well done!</div>
+            <div class="xp-earned" id="xpEarned">+0 XP</div>
+            <div class="efficiency-update" id="efficiencyUpdate"></div>
+            
+            <div class="game-over-actions">
+                <button class="action-btn primary" id="playAgain" type="button">Play Again</button>
+                <button class="action-btn secondary" id="backToMenu" type="button">Main Menu</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
