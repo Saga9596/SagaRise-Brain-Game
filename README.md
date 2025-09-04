@@ -4,8 +4,8 @@
 # 🧠 SagaRise
 ### *Brain Training Evolution*
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://YOUR_USERNAME.github.io/sagarise-brain-training)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge)](https://github.com/YOUR_USERNAME/sagarise-brain-training)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://saga9596.github.io/sagarise-brain-training)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge)](https://github.com/saga9596/sagarise-brain-training)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
 
 *Challenge your mind with scientifically designed games that boost memory, reflexes, and logical thinking*
