@@ -1,0 +1,17 @@
+{
+  "name": "sagarise-game",
+  "version": "1.0.0",
+  "description": "SagaRise brain game with Neon Postgres integration",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "start": "vercel dev",
+    "build": "echo "No build step needed"",
+    "deploy": "vercel --prod"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@neondatabase/serverless": "^0.10.1"
+  }
+}
