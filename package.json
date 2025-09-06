@@ -6,7 +6,7 @@
   "main": "app.js",
   "scripts": {
     "start": "vercel dev",
-    "build": "echo "No build step needed"",
+    "build": "echo \"No build step needed\"",
     "deploy": "vercel --prod"
   },
   "author": "",
